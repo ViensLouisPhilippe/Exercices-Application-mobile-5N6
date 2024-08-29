@@ -1,35 +1,16 @@
-import 'package:exercicecours3/Page2ExerciceSimple.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const exerciceSimple_nav());
-}
+import 'exercice_page2.dart';
 
-class exerciceSimple_nav extends StatelessWidget {
-  const exerciceSimple_nav({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class Page1 extends StatefulWidget {
+  const Page1({super.key, required this.title});
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Page1> createState() => _Page1State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Page1State extends State<Page1> {
   final TextEditingController _controller = TextEditingController();
 
   void _navigateToSecondScreen() {
@@ -37,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => page2ExerciceSimple(text: text),
+        builder: (context) => Page2(text: text),
       ),
     );
   }
@@ -65,10 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               child: const Text("go to next page"),
-              onPressed: (){
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const page2ExerciceSimple(text: "",),),);
-              },
+              onPressed: _navigateToSecondScreen,
             ),
           ],
         ),
