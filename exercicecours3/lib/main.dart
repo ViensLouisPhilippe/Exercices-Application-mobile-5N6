@@ -1,4 +1,5 @@
 import 'package:exercicecours3/exercice1/exercice_page2.dart';
+import 'package:exercicecours3/exercice2/exercice2_page1.dart';
 import 'package:flutter/material.dart';
 
 import 'exercice1/exercice_page1.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Page1(title: "Page 1"),
+      home: exercice2Page1(),
     );
   }
 }
